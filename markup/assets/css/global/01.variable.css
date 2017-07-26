@@ -9,8 +9,9 @@ $keyColor: $green;
 // size
 $width: 1024px;
 
-$base-font-size: 16px;
-$base-mobile-font-size: 14px;
+// px
+$rootFontSize: 16;
+$rootMobileFontSize: 14;
 
 // custom-media
 @custom-media --pc only screen and (min-width: 1024px);

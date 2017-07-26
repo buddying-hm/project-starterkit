@@ -1,32 +1,9 @@
-// #ブレークポイント
-@define-mixin break-point $point {
-    @if $point == pc {
-        @media only screen and (min-width: 1024px) {
-            @mixin-content;
-        }
-    } @else if $point == tablet {
-        @media only screen and (max-width: 1023px) {
-            @mixin-content;
-        }
-    } @else if $point == mobile {
-        @media only screen and (max-width: 599px) {
-            @mixin-content;
-        }
-    }
-}
-
-@define-mixin device-pixel-ratio $ratio: 2 {
-    @media screen and (min-resolution: $(ratio}dppx) {
-        @mixin-content;
-    }
-}
-
 @define-mixin pseudo-element $content: '', $position: absolute, $display: block {
     position: $position;
     display: $display;
     content: $content;
 }
 
-@define-mixin font-size-px-to-rem $fontSize {
-    font-size: $fontSize / $base-font-size + rem;
+@define-mixin px-to-rem $fontSize {
+    font-size: calc($fontSize / $rootFontSize)rem;
 }
