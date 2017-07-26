@@ -10,7 +10,7 @@ img {
 html {
     @extend %ffg;
     font-size: $base-font-size;
-    @include break-point(mobile) {
+    @media (--mobile) {
         font-size: $base-mobile-font-size;
     }
 }
