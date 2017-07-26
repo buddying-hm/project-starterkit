@@ -1,9 +1,7 @@
 /* .st */
 .st {
     &-Header {
-        @mixin px-to-rem 20;
     }
     &-Footer {
-        @mixin px-to-rem 18;
     }
 }
