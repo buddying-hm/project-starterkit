@@ -1,0 +1,6 @@
+/* .tp */
+.tp {
+    &-Hero {
+        background: $themeColor;
+    }
+}

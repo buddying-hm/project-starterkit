@@ -2,9 +2,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const p_path = require('../tasks/lib/p_path');
 
 const webpackConf = {
-  context: `${p_path._assets}/scss`,
+  context: `${p_path._assets}/css`,
   entry: {
-    style: './style.scss'
+    style: './style.css'
   },
   output: {
     path: p_path.output.css,
@@ -14,13 +14,6 @@ const webpackConf = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader']
-        })
-      },
-      {
-        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -37,13 +30,6 @@ const webpackConf = {
                 config: {
                   path: `${p_path.root}/config/postcss.config.js`
                 }
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                outputStyle: (process.env.NODE_ENV === 'production') ? 'compressed' : 'compact',
-                sourceMap: true
               }
             }
           ]

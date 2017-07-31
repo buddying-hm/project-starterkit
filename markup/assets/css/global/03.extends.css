@@ -1,4 +1,4 @@
-%clearfix{
+%clearfix {
     zoom:1;
     &:after{
         clear: both;
@@ -8,7 +8,7 @@
 }
 
 %hover {
-    @include break-point(pc) {
+    @media (--pc) {
         transition: all .2s ease-in-out;
         &:hover {
             opacity: .7;
