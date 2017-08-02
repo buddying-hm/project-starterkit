@@ -9,8 +9,9 @@ img {
 
 html {
     @extend %ffg;
-    font-size: $(rootFontSize)px;
-    @media (--mobile) {
-        font-size: $(rootMobileFontSize)px;
+    font-size: $rootFontSize;
+    display: flex;
+    @include break-point(mobile) {
+        font-size: $rootMobileFontSize;
     }
 }

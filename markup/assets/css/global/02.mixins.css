@@ -1,9 +1,0 @@
-@define-mixin pseudo-element $content: '', $position: absolute, $display: block {
-    position: $position;
-    display: $display;
-    content: $content;
-}
-
-@define-mixin fsize-px-to-rem $fontSize {
-    font-size: calc($fontSize / $rootFontSize)rem;
-}

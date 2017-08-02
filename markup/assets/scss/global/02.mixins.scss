@@ -1,0 +1,34 @@
+// #ブレークポイント
+@mixin break-point($point) {
+    @if $point == pc {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media only screen and (max-width: 1023px) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media only screen and (max-width: 599px) {
+            @content;
+        }
+    }
+}
+
+@mixin device-pixel-ratio($ratio: 2) {
+    @media screen and (min-resolution: #{$ratio}dppx) {
+        @content;
+    }
+}
+
+// #擬似要素
+@mixin pseudo-element($content: '', $position: absolute, $display: block) {
+    position: $position;
+    display: $display;
+    content: $content;
+}
+
+// #pxをremに変換
+@mixin fsize-px-to-rem($fontSize) {
+    font-size: ($fontSize / $rootFontSize) + rem;
+}

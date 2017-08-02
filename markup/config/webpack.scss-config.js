@@ -1,10 +1,12 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const p_path = require('../tasks/lib/p_path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 const webpackConf = {
-  context: `${p_path._assets}/css`,
+  context: `${p_path._assets}/scss`,
   entry: {
-    style: './style.css'
+    style: './style.scss'
   },
   output: {
     path: p_path.output.css,
@@ -13,7 +15,7 @@ const webpackConf = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -21,7 +23,7 @@ const webpackConf = {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                url: false,
+                url: false
               }
             },
             { loader: 'postcss-loader',
@@ -30,6 +32,13 @@ const webpackConf = {
                 config: {
                   path: `${p_path.root}/config/postcss.config.js`
                 }
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                outputStyle: (process.env.NODE_ENV === 'production') ? 'compressed' : 'compact',
+                sourceMap: true
               }
             }
           ]
