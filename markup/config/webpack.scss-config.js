@@ -1,7 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const p_path = require('../tasks/lib/p_path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 const webpackConf = {
   context: `${p_path._assets}/scss`,
