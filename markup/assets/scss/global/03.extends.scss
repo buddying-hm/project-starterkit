@@ -8,7 +8,7 @@
 }
 
 %hover {
-    @media (--pc) {
+    @include break-point(pc) {
         transition: all .2s ease-in-out;
         &:hover {
             opacity: .7;
