@@ -12,18 +12,47 @@ package.jsonの内容に基づき依存ファイルをローカルにインス�
         "context": "markup",
         "css": "assets/css",
         "js": "assets/js",
-        "img": "assets/img"
+        "img": "assets/img",
+        "font": "assets/font"
     },
     "server": {
         "context": "source/html",
         "css": "/",
         "js": "assets/js",
-        "img": "assets/img"
+        "img": "assets/img",
+        "font": "assets/font"
     }
 }
 ```
-css,js,imgはcontextからのパス<br>
+css,js,img,fontはcontextからのパス<br>
 contextが未設定の場合はpackage.jsonと同じディレクトリがcontextになる。
+
+## コンパイルファイルの出力構造
+view以下の構造に従ってpackage.jsonのoutputに出力されます  
+css  
+`view/common/scss/index.scss` → `assets/css/common/index.css`  
+`view/common/scss/page.scss` → `assets/css/common/page.css`  
+js  
+`view/common/js/index.js` → `assets/js/common/index.js`  
+`view/common/js/vendor.js` → `assets/js/common/vendor.js`
+img  
+`view/common/img/logo.png` → `assets/img/common/logo.png`  
+`view/common/img/banner/banner.png` → `assets/js/common/banner/banner.png`
+
+## SCSSコンパイル
+すべてのファイルに自動で`_base/scss/_index.scss`がimportされる仕組みになっています。
+
+### 出力をしないファイル
+- ファイル名の先頭に_がついているもの
+
+## JSコンパイル
+
+### 出力をしないファイル
+- lib(s?)ディレクトリ以下
+- util(s?)ディレクトリ以下
+- component(s?)ディレクトリ以下
+- \_\_test(s?)\_\_ディレクトリ以下
+- \_\_mock(s?)\_\_ディレクトリ以下
 
 # フロントエンド Commands
 **実行方法は`npm run <command>` or `yarn <command>`**<br>

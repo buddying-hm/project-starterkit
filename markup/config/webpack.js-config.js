@@ -11,7 +11,10 @@ const webpackConf = {
   },
   resolve: {
     extensions: ['.js', '.json'],
-    alias: {}
+    alias: {
+      '@view': `${pPath.root}/view`,
+      '@base': `${pPath.root}/_base`
+    }
   },
   plugins: [
     webpackCopyDirectories(`${pPath.root}/view`, 'img', pPath.output.img),

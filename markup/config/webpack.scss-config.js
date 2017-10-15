@@ -36,7 +36,7 @@ const webpackConf = {
               options: {
                 outputStyle: (process.env.NODE_ENV === 'production') ? 'compressed' : 'compact',
                 sourceMap: true,
-                data: '@import "_base/scss/_index.scss"; @import "common/scss/_sitewide.scss"; @import "common/scss/_form.scss"; @import "common/scss/_pager.scss";',
+                data: '@import "_base/scss/_index.scss";',
                 includePaths: [
                   `${pPath.root}/view/`
                 ]

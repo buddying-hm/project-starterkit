@@ -27,8 +27,3 @@
     display: $display;
     content: $content;
 }
-
-// #pxをremに変換
-@mixin fsize-px-to-rem($fontSize) {
-    font-size: ($fontSize / $rootFontSize) + rem;
-}

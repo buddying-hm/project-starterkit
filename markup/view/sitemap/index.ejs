@@ -1,17 +1,22 @@
 <%
 page = {
     title: 'サイトマップ',
-    className: 'sitemap',
+    className: '',
+    description: 'トップページはトップページです。',
+    ogpImage: `${ROOT_DIR}/assets/img/common/ogp.png`,
+    styles: [],
+    scripts: [],
     breadcrumbs: [
         {title: 'トップページ', href: ROOT_DIR},
         {title: 'サイトマップ'}
     ]
 };
+
 %>
 
-<%- include(ROOT_DIR + '/_common/_header') -%>
+<%- include(ROOT_DIR + '/_structure/_header') -%>
 <%- include(ROOT_DIR + '/_components/_breadcrumbs') -%>
-<main id="main">
+<main id="sm-main">
     <p>sitemap</p>
 </main>
-<%- include(ROOT_DIR + '/_common/_footer') -%>
+<%- include(ROOT_DIR + '/_structure/_footer') -%>

@@ -1,5 +1,3 @@
-const returnJson = require('./bs.api');
-
 module.exports = [
   {
     route: '/api',

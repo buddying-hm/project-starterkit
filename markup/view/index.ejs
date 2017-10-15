@@ -1,10 +1,14 @@
 <%
 page = {
     title: 'トップページ',
-    className: ''
+    className: '',
+    description: 'トップページはトップページです。',
+    ogpImage: `${ROOT_DIR}/assets/img/common/ogp.png`,
+    styles: [],
+    scripts: [],
 };
 %>
 
-<%- include(ROOT_DIR + '/_common/_header') -%>
+<%- include(ROOT_DIR + '/_structure/_header') -%>
 <main class="tp-Main"></main>
-<%- include(ROOT_DIR + '/_common/_footer') -%>
+<%- include(ROOT_DIR + '/_structure/_footer') -%>

@@ -3,20 +3,26 @@
     box-sizing: border-box;
 }
 
-img {
-  vertical-align: top;
-}
-
 html {
     @extend %ffg;
     font-size: 62.5%; // 10px
     line-height: 1.5;
+    color: $textColor;
+    -webkit-font-smoothing: antialiased;
 }
-
 
 body {
     font-size: 1.6rem;
     @include break-point(mobile) {
         font-size: 1.4rem;
     };
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    @extend %hover;
+    color: $mainColor;
 }

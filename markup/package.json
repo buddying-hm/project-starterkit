@@ -7,13 +7,15 @@
       "context": "../public",
       "css": "assets/css",
       "js": "assets/js",
-      "img": "assets/img"
+      "img": "assets/img",
+      "font": "assets/font"
     },
     "server": {
       "context": "../source/html",
       "css": "assets/css",
       "js": "assets/js",
-      "img": "assets/img"
+      "img": "assets/img",
+      "font": "assets/font"
     }
   },
   "scripts": {
@@ -49,6 +51,7 @@
     "gulp-html-beautify": "^1.0.1",
     "jest": "^20.0.4",
     "node-sass": "^4.5.3",
+    "p-path": "file:tasks/lib/p-path",
     "postcss-loader": "^2.0.8",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.16.1",
@@ -60,7 +63,7 @@
     "jquery": "^3.2.1"
   },
   "jest": {
-    "rootDir": "assets/js"
+    "rootDir": "view"
   },
   "babel": {
     "presets": [

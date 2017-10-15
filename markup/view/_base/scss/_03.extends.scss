@@ -8,6 +8,7 @@
 }
 
 %hover {
+    cursor: pointer;
     @include break-point(pc) {
         transition: all .2s ease-in-out;
         &:hover {
@@ -17,7 +18,7 @@
 }
 
 %ffg {
-  font-family: '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+  font-family: Noto Sans Japanese, '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 }
 
 %ffm {
