@@ -1,0 +1,16 @@
+{
+  "name": "p-path",
+  "version": "1.0.0",
+  "description": "project path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url" : "https://github.com/buddying-hm/project-starterkit/issues",
+    "email" : "miyazaki@buddying.jp"
+  },
+  "keywords": [],
+  "author": "Naoyuki Miyazaki <miyazaki@buddying.jp>",
+  "license": "MIT"
+}

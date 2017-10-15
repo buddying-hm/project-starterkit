@@ -2,13 +2,13 @@ const gulp = require('gulp');
 const del = require('del');
 const beautify = require('gulp-html-beautify');
 const ejs = require('./custom-gulp-ejs');
-const p_path = require('./p_path');
+const pPath = require('p-path');
 
 class _ejs {
   constructor() {
-    this.view = `${p_path.root}/view`;
+    this.view = `${pPath.root}/view`;
     this.watchfile = [`${this.view}/**/*.ejs`, `!${this.view}/**/_*.ejs`];
-    this.cleanFile = [`${p_path.output.root}/**/*.html`, `!${p_path.output.root}/**/.*`, `!${p_path.output.css}`, `!${p_path.output.js}`, `!${p_path.output.img}`];
+    this.cleanFile = [`${pPath.output.root}/**/*.html`, `!${pPath.output.root}/**/.*`, `!${pPath.output.css}`, `!${pPath.output.js}`, `!${pPath.output.img}`];
   }
 
   clean() {
@@ -27,7 +27,7 @@ class _ejs {
       gulp.src(this.watchfile)
         .pipe(ejs({}, {}, { ext: '.html' }, this.view))
         .pipe(beautify())
-        .pipe(gulp.dest(p_path.output.root));
+        .pipe(gulp.dest(pPath.output.root));
     });
   }
 

@@ -18,14 +18,14 @@ switch (process.argv[2]) {
 }
 
 const del = require('del');
-const p_path = require('./lib/p_path');
+const pPath = require('p-path');
 
 function clean() {
   let cleanFiles;
   if (process.env.TARGET === 'markup') {
-    cleanFiles = [`${p_path.output.root}/**/*`, `!${p_path.output.root}/**/.*`];
+    cleanFiles = [`${pPath.output.root}/**/*`, `!${pPath.output.root}/**/.*`];
   } else {
-    cleanFiles = [`${p_path.output.css}`, `${p_path.output.js}`, `${p_path.output.img}`];
+    cleanFiles = [pPath.output.css, pPath.output.js, pPath.output.img, pPath.output.font];
   }
 
   console.log('---clean up directory---');
