@@ -1,2 +1,2 @@
-**/test/**
-**/__test__/**
+*.test.js
+tasks/*

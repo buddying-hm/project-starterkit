@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "eslint"],
+  "extends": "airbnb-base",
   "env": {
     "node": true,
     "browser": true,
@@ -10,23 +10,5 @@
   },
   "parserOptions": {
     "sourceType": "module"
-  },
-  "rules": {
-    "indent": ["error", 2],
-    "quotes": ["error", "single"],
-    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "no-useless-constructor": "off",
-    "no-use-before-define": "off",
-    "no-new": "off",
-    "lines-around-comment": "off",
-    "camelcase": "off",
-    "no-underscore-dangle": "off",
-    "wrap-iife": "off",
-    "no-console": "warn",
-    "newline-after-var": "off",
-    "require-jsdoc": "off",
-    "prefer-const": "warn",
-    "curly": "off",
-    "no-trailing-spaces": "off"
   }
 }
