@@ -9,14 +9,9 @@ img {
 
 html {
     @extend %ffg;
-    font-size: 62.5%; // 10px
-    line-height: 1.5;
-}
-
-
-body {
-    font-size: 1.6rem;
+    font-size: $rootFontSize;
+    display: flex;
     @include break-point(mobile) {
-        font-size: 1.4rem;
-    };
+        font-size: $rootMobileFontSize;
+    }
 }
