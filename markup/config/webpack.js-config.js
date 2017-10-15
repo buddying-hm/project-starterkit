@@ -1,27 +1,21 @@
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const p_path = require('../tasks/lib/p_path');
+const pPath = require('p-path');
+const webpackJsEntries = require('../tasks/lib/webpack-js-entries');
+const webpackCopyDirectories = require('../tasks/lib/webpack-copy-directories');
 
 const webpackConf = {
-  context: `${p_path._assets}`,
-  entry: {
-    common: ['babel-polyfill', './js/common.js']
-  },
+  context: `${pPath.root}/view`,
+  entry: webpackJsEntries(`${pPath.root}/view`),
   output: {
-    path: p_path.output.js,
+    path: pPath.output.js,
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.json'],
+    alias: {}
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
-    new CopyWebpackPlugin([
-      { from: `${p_path._assets}/img`, to: p_path.output.img }
-    ])
+    webpackCopyDirectories(`${pPath.root}/view`, 'img', pPath.output.img),
+    webpackCopyDirectories(`${pPath.root}/view`, 'font', pPath.output.font)
   ],
   module: {
     rules: [

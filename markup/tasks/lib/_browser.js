@@ -1,7 +1,7 @@
 const browserSync = require('browser-sync').create();
-const p_path = require('./p_path');
+const pPath = require('p-path');
 
-const markup = p_path.output.root;
+const { config, watchFiles } = require(`${pPath.config}/bs.config.js`);
 
 class DelayTimer {
   constructor() {
@@ -22,17 +22,10 @@ const delayTimer = new DelayTimer();
 
 class _browser {
   start() {
-    browserSync.init({
-      server: { baseDir: markup },
-      ghostMode: {
-        clicks: false,
-        forms: false,
-        scroll: false
-      }
-    });
+    browserSync.init(config);
 
     const chokidar = require('chokidar');
-    const watcher = chokidar.watch([`${markup}/**/*`]);
+    const watcher = chokidar.watch(watchFiles);
     watcher.on('change', () => {
      delayTimer.start()
     });

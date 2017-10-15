@@ -1,13 +1,12 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const p_path = require('../tasks/lib/p_path');
+const pPath = require('p-path');
+const webpackScssEntries = require('../tasks/lib/webpack-scss-entries');
 
 const webpackConf = {
-  context: `${p_path._assets}/scss`,
-  entry: {
-    style: './style.scss'
-  },
+  context: `${pPath.root}/view`,
+  entry: webpackScssEntries(`${pPath.root}/view`),
   output: {
-    path: p_path.output.css,
+    path: `${pPath.output.css}`,
     filename: '[name].css'
   },
   module: {
@@ -28,7 +27,7 @@ const webpackConf = {
               options: {
                 sourceMap: true,
                 config: {
-                  path: `${p_path.root}/config/postcss.config.js`
+                  path: `${pPath.root}/config/postcss.config.js`
                 }
               }
             },
@@ -36,7 +35,11 @@ const webpackConf = {
               loader: 'sass-loader',
               options: {
                 outputStyle: (process.env.NODE_ENV === 'production') ? 'compressed' : 'compact',
-                sourceMap: true
+                sourceMap: true,
+                data: '@import "_base/scss/_index.scss"; @import "common/scss/_sitewide.scss"; @import "common/scss/_form.scss"; @import "common/scss/_pager.scss";',
+                includePaths: [
+                  `${pPath.root}/view/`
+                ]
               }
             }
           ]
