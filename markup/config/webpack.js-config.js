@@ -13,7 +13,6 @@ const webpackConf = {
     extensions: ['.js', '.json'],
     alias: {
       '@view': `${pPath.root}/view`,
-      '@base': `${pPath.root}/_base`
     }
   },
   plugins: [
