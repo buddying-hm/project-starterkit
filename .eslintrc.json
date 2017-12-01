@@ -14,5 +14,8 @@
   },
   "parserOptions": {
     "sourceType": "module"
+  },
+  "rules": {
+    "no-use-before-define": "off"
   }
 }
