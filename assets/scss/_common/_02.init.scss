@@ -1,0 +1,28 @@
+// 全ての要素をborder-boxにリセット
+* {
+    box-sizing: border-box;
+}
+
+html {
+    @extend %ffg;
+    font-size: 62.5%; // 10px
+    line-height: 1.5;
+    color: $text-color;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: 1.6rem; // 16px
+    @media #{$mobile-media} {
+        font-size: 1.4rem; // 14px
+    }
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    @extend %hover;
+    color: $text-color;
+}

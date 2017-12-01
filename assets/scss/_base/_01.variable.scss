@@ -1,0 +1,29 @@
+//
+// color
+//
+$black: #565656;
+$white: #FAFAFA;
+$blue: #0D61A8;
+$lightcyan: #E0EDFF;
+
+// text
+$text-color: $black;
+
+// background
+$background-color: $white;
+
+// border
+$border-blue: $blue;
+
+//
+// media query
+//
+$media-2x:        'only screen and (min-resolution: 2dppx)';
+$pc-media:        'only screen and (min-width: 1024px)';
+$pc-media-2x:     'only screen and (min-width: 1024px) and (min-resolution: 2dppx)';
+$tablet-media:    'only screen and (max-width: 1023px)';
+$tablet-media-2x: 'only screen and (max-width: 1023px) and (min-resolution: 2dppx)';
+$mobile-media:    'only screen and (max-width: 599px)';
+$mobile-media-2x: 'only screen and (max-width: 599px) and (min-resolution: 2dppx)';
+// autoprefixerを使わない場合は以下
+// (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)

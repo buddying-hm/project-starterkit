@@ -1,0 +1,6 @@
+// #擬似要素
+@mixin pseudo-element($content: '', $position: absolute, $display: block) {
+    position: $position;
+    display: $display;
+    content: $content;
+}

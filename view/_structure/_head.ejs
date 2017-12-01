@@ -1,0 +1,38 @@
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="">
+    <title><%= page.title %></title>
+    <meta name="description" content="<%= page.description %>">
+    <meta name="format-detection" content="telephone=no">
+    <!-- External files -->
+    <link href="<%= ROOT_DIR %>/assets/css/style.css" rel="stylesheet">
+    <% if (page.styles && Array.isArray(page.styles)) { %>
+    <% page.styles.forEach(stylesheet => { %>
+    <link href="<%= stylesheet %>" rel="stylesheet">
+    <% }); %>
+    <% } %>
+    <script src="<%= ROOT_DIR %>/assets/js/vendor.js" defer></script>
+    <script src="<%= ROOT_DIR %>/assets/js/index.js" defer></script>
+    <% if (page.scripts && Array.isArray(page.scripts)) { %>
+    <% page.scripts.forEach(script => { %>
+    <script src="<%= script %>" defer></script>
+    <% }); %>
+    <% } %>
+    <!-- Favicon, Thumbnail image -->
+    <link href="<%= ROOT_DIR %>/assets/img/favicon.ico" rel="shortcut icon">
+    <link href="<%= ROOT_DIR %>/assets/img/favicon_big.png" rel="apple-touch-icon">
+    <!-- OGP -->
+    <meta property="og:title" content="<%= page.title %>">
+    <meta property="og:description" content="<%= page.description %>">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="<%= page.ogpImage %>">
+    <meta property="og:type" content="website">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= page.title %>">
+    <meta name="twitter:description" content="<%= page.description %>">
+    <meta name="twitter:image" content="<%= page.ogpImage %>">
+    <noscript><style>.noscript{display:block;}</style></noscript>
+</head>
